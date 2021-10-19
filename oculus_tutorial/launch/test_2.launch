@@ -1,0 +1,5 @@
+<launch>
+    <rosparam file="$(find oculus_tutorial)/config/params.yaml" command="load"/>
+    <node name="server_endpoint" pkg="ros_tcp_endpoint" type="default_server_endpoint.py" args="--wait" output="screen" respawn="true" />
+    <node name="pose_opetaion_oculus2object_node" pkg="oculus_tutorial" type="pose_opetaion_oculus2object_node" args="--wait" output="screen"/>
+</launch>
